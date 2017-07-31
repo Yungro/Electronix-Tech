@@ -6,12 +6,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Cryptic;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static javafx.scene.paint.Color.color;
 import javax.swing.*;
 
 public class TestingApp2 extends JFrame {
@@ -21,26 +29,39 @@ public class TestingApp2 extends JFrame {
         frame.setTitle("Cryptic Launcher");
         frame.setLayout(new FlowLayout ());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JLabel label1 = new JLabel("<html>Welcome to Cryptic. <br> You are a brilliant mastermind with a plan to rule "
+        JLabel label1 = new JLabel("<html><center>Welcome to Cryptic. <br> You are a brilliant mastermind with a plan to rule "
                 + "the world.<br> However while you were sleeping somebody transferred you to a different "
-                + "world where you have to escape.</html>"); 
+                + "world where you have to escape.</center></html>"); 
         
         label1.setHorizontalTextPosition(JLabel.CENTER);
-        label1.setFont(new Font("Verdana", Font.BOLD, 12));
+        label1.setFont(new Font("Verdana", Font.PLAIN, 12));
         label1.setForeground(Color.GRAY);
         frame.setSize(400,400);
         frame.setLayout(new GridLayout(7, 5));
-        JButton button1 = new JButton("Play");
+        JButton button1 = new JButton("<html>Play</html>");
+        button1.setForeground(Color.GRAY);
+        button1.setFont(new Font("Verdana", Font.BOLD ,12));
+             
         
         ImageIcon imageIcon = new ImageIcon("/Users/iandoering/Desktop/Demo.jpg ");
         JLabel label2 = new JLabel(imageIcon);
+        
         
         frame.add(label2);
         frame.add(label1);
         frame.add(button1);
         frame.pack();
         frame.setVisible(true);
-    }
+        
+             button1.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            label1.setText("Starting Game.");
+         }   
+             });
+             
+             }
+             
+         
     public static void main(String[]args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
