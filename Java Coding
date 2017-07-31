@@ -1,6 +1,11 @@
 //Note: The package is the project folder. You may get an error if you use my package. When naming the project, make sure to
 //name it what you want the package to be.
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Cryptic;
 
 import java.awt.Color;
@@ -26,6 +31,11 @@ public class TestingApp2 extends JFrame {
         frame.setSize(400,400);
         frame.setLayout(new GridLayout(7, 5));
         JButton button1 = new JButton("Play");
+        
+        ImageIcon imageIcon = new ImageIcon("/Users/iandoering/Desktop/Demo.jpg ");
+        JLabel label2 = new JLabel(imageIcon);
+        
+        frame.add(label2);
         frame.add(label1);
         frame.add(button1);
         frame.pack();
