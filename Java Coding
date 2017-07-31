@@ -1,8 +1,7 @@
 //Note: The package is the project folder. You may get an error if you use my package. When naming the project, make sure to
 //name it what you want the package to be.
 
-package testingapp2;
-package testingapp2;
+package Cryptic;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
