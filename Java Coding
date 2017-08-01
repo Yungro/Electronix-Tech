@@ -1,16 +1,7 @@
 //Note: The package is the project folder. You may get an error if you use my package. When naming the project, make sure to
 //name it what you want the package to be.
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Cryptic;
 
 import java.awt.Color;
@@ -19,6 +10,9 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static javafx.scene.paint.Color.color;
 import javax.swing.*;
 
@@ -34,13 +28,13 @@ public class TestingApp2 extends JFrame {
                 + "world where you have to escape.</center></html>"); 
         
         label1.setHorizontalTextPosition(JLabel.CENTER);
-        label1.setFont(new Font("Verdana", Font.PLAIN, 12));
+        label1.setFont(new Font("Verdana", Font.PLAIN, 22));
         label1.setForeground(Color.GRAY);
         frame.setSize(400,400);
         frame.setLayout(new GridLayout(7, 5));
         JButton button1 = new JButton("<html>Play</html>");
         button1.setForeground(Color.GRAY);
-        button1.setFont(new Font("Verdana", Font.BOLD ,12));
+        button1.setFont(new Font("Verdana", Font.BOLD ,16));
              
         
         ImageIcon imageIcon = new ImageIcon("/Users/iandoering/Desktop/Demo.jpg ");
@@ -54,8 +48,13 @@ public class TestingApp2 extends JFrame {
         frame.setVisible(true);
         
              button1.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {
-            label1.setText("Starting Game.");
+         public void actionPerformed(ActionEvent e) {              
+              label1.setText("<html><center>Loading...</center></html>");
+              label1.setFont(new Font("Verdana", Font.PLAIN, 40));
+             button1.setVisible(false);
+             
+                   frame.setVisible(false);
+                   frame.dispose();
          }   
              });
              
