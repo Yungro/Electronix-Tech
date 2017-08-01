@@ -2,6 +2,11 @@
 //name it what you want the package to be.
 
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Cryptic;
 
 import java.awt.Color;
@@ -15,6 +20,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import static javafx.scene.paint.Color.color;
 import javax.swing.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TestingApp2 extends JFrame {
     private static void constructGUI() {
@@ -35,7 +42,8 @@ public class TestingApp2 extends JFrame {
         JButton button1 = new JButton("<html>Play</html>");
         button1.setForeground(Color.GRAY);
         button1.setFont(new Font("Verdana", Font.BOLD ,16));
-             
+        
+        
         
         ImageIcon imageIcon = new ImageIcon("/Users/iandoering/Desktop/Demo.jpg ");
         JLabel label2 = new JLabel(imageIcon);
