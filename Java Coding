@@ -87,14 +87,30 @@ public class TestingApp2 extends JFrame {
             JFrame Game = new JFrame();
             Game.setTitle("Cryptic");
             Game.setVisible(true);
-            Game.setSize(1000, 800);
+            
             Game.setLayout(new GridLayout(7, 5));
             Game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            Game.setSize(1000, 800);
             JButton play = new JButton("Play");
             play.setForeground(Color.GRAY);
         play.setBackground(Color.GREEN);
         play.setFont(new Font("Verdana", Font.BOLD ,16));
+        JTextField Name = new JTextField("Enter your Username");
+        Name.setBounds(145, 25, 100, 20);
+            Game.add(play);
+              Game.add(Name);
+              play.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+                 String Input = Name.getText();
+                 System.out.println("Welcome " + Input);
+                 Name.setVisible(false);
+                 play.setVisible(false);
+                 JButton welcome = new JButton("Welcome " + Input + "!");
+                 Game.add(welcome);
              }
+              
+              });
+                          }
              });
              }
              
