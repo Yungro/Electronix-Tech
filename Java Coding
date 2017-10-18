@@ -2,14 +2,17 @@
 //name it what you want the package to be.
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/*        ____    __________
+ *       / __/   /___   ___/
+ *      / /_        /  /
+ *     / __/       /  /
+ *    / /_        /  /
+ *   /___/       /__/
  */
 package Cryptic;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -25,6 +28,7 @@ import java.util.TimerTask;
 
 public class TestingApp2 extends JFrame {
     private static void constructGUI() {
+        int i = 1;
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame();
         frame.setTitle("Cryptic Launcher");
@@ -41,31 +45,57 @@ public class TestingApp2 extends JFrame {
         frame.setLayout(new GridLayout(7, 5));
         JButton button1 = new JButton("<html>Play</html>");
         button1.setForeground(Color.GRAY);
+        button1.setBackground(Color.GREEN);
         button1.setFont(new Font("Verdana", Font.BOLD ,16));
         
-        
-        
+       
         ImageIcon imageIcon = new ImageIcon("/Users/iandoering/Desktop/Demo.jpg ");
-        JLabel label2 = new JLabel(imageIcon);
-        
-        
+        JLabel label2 = new JLabel();
+        JButton proceed = new JButton ("Proceed");
+        proceed.setSize(new Dimension(83, 291));
+        proceed.setVisible(false);
         frame.add(label2);
         frame.add(label1);
         frame.add(button1);
+        frame.add(proceed);
         frame.pack();
         frame.setVisible(true);
         
              button1.addActionListener(new ActionListener() {
-         public void actionPerformed(ActionEvent e) {              
-              label1.setText("<html><center>Loading...</center></html>");
-              label1.setFont(new Font("Verdana", Font.PLAIN, 40));
-             button1.setVisible(false);
+         public void actionPerformed(ActionEvent e) {         
              
-                   frame.setVisible(false);
-                   frame.dispose();
+              label2.setText("<html><center>This is a Testing App<br>Proceed at your own risk</center></html>");
+              label2.setHorizontalTextPosition(JLabel.CENTER); 
+              label2.setFont(new Font("Verdana", Font.PLAIN, 40));
+              label2.setForeground(Color.GRAY);
+              label1.setVisible(false);
+             button1.setVisible(false);
+             proceed.setVisible(true);
+            
+              
+        
+        
          }   
              });
-             
+            
+             proceed.setForeground(Color.GRAY);
+        proceed.setBackground(Color.GREEN);
+        proceed.setFont(new Font("Verdana", Font.BOLD ,16));
+             proceed.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+                            frame.dispose();
+            JFrame Game = new JFrame();
+            Game.setTitle("Cryptic");
+            Game.setVisible(true);
+            Game.setSize(1000, 800);
+            Game.setLayout(new GridLayout(7, 5));
+            Game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            JButton play = new JButton("Play");
+            play.setForeground(Color.GRAY);
+        play.setBackground(Color.GREEN);
+        play.setFont(new Font("Verdana", Font.BOLD ,16));
+             }
+             });
              }
              
          
