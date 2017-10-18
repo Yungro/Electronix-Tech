@@ -105,8 +105,16 @@ public class TestingApp2 extends JFrame {
                  System.out.println("Welcome " + Input);
                  Name.setVisible(false);
                  play.setVisible(false);
-                 JButton welcome = new JButton("Welcome " + Input + "!");
+                 JButton welcome = new JButton("Welcome " + Input + "! Choose your Character!");
+                         JButton Character_1= new JButton ("Character_1");
+        JButton Character_2= new JButton ("Character_2");
+         Character_1.setSize(new Dimension(83, 291));
+         Character_1.setVisible(true);
+         Character_2.setSize(new Dimension(83, 291));
+         Character_2.setVisible(true);
                  Game.add(welcome);
+                 Game.add(Character_2);
+                 Game.add(Character_1);
              }
               
               });
